@@ -6,7 +6,7 @@ Screenshotter is a Java Based application where you can take screenshots and pas
 
 The tool is based on Java Swing library.
 
-**UI: **
+**UI:**
 
 
 ![image](https://github.com/user-attachments/assets/a3f098d7-76e5-4019-92e8-fd8f5e1f37fc)
