@@ -4,7 +4,7 @@
 
 Screenshotter is a Java-based application that allows you to take screenshots and paste them into a Word document.
 
-The tool is based on Java Swing library library.
+The tool is based on Java Swing library.
 
 **Author: Subhayan Bakshi**
 
