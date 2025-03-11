@@ -1,2 +1,0 @@
-# Screenshotter
-Screenshotter
