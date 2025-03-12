@@ -10,7 +10,7 @@ The tool is based on Java Swing library.
 **Release Notes:**
 
 [12-03-25] Latest release lets you add the captions of each Screenshot to your Word Document!
-No captions required? not an issue!!! :D
+No captions required? Not an issue!!! :D
 
 
 
