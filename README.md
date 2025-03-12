@@ -1,17 +1,24 @@
 ![image](https://github.com/user-attachments/assets/e839d994-cce7-4840-b7af-ba6547681084)
 
-**SCREENSHOTTER**
+#  SCREENSHOTTER
 
 Screenshotter is a Java-based application that allows you to take screenshots and paste them into a Word document.
-
 The tool is based on Java Swing library.
 
-**Author: Subhayan Bakshi**
+#  Author: Subhayan Bakshi
+
+**Release Notes:**
+
+[12-03-25] Latest release lets you add the captions of each Screenshot to your Word Document!
+No captions required? not an issue!!! :D
+
+
 
 **UI:**
 
 
-![image](https://github.com/user-attachments/assets/a3f098d7-76e5-4019-92e8-fd8f5e1f37fc)
+![image](https://github.com/user-attachments/assets/c222ff0f-c28c-4aad-bb96-0470dd551e1f)
+
 
 
 **Output:**
