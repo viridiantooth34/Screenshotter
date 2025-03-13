@@ -1,4 +1,5 @@
 package utilities;
+
 /*************************************************************************
  *                                                                       *
  *                            Author: Subhayan Bakshi                    *
@@ -75,122 +76,210 @@ public class Utilities {
 
 	}
 
+	/*
+	 * public void copyingImagesFromScreenshotstoWordDocument(ArrayList<String>
+	 * descriptions) {
+	 * 
+	 * try {
+	 * 
+	 * // Folder path containing PNG files
+	 * 
+	 * File folder = new File(System.getProperty("user.dir") +
+	 * "\\src\\main\\resources\\Screenshots\\");
+	 * 
+	 * // Create a new document
+	 * 
+	 * XWPFDocument document = new XWPFDocument();
+	 * 
+	 * // Define maximum width and height for images
+	 * 
+	 * int maxWidth = Units.toEMU(500); // Adjust as needed
+	 * 
+	 * int maxHeight = Units.toEMU(700); // Adjust as needed
+	 * 
+	 * // Process each PNG file in the folder
+	 * 
+	 * int index = 0;
+	 * 
+	 * for (File file : folder.listFiles()) {
+	 * 
+	 * if (file.isFile() && file.getName().endsWith(".png")) {
+	 * 
+	 * // Read PNG file
+	 * 
+	 * BufferedImage bufferedImage = ImageIO.read(file);
+	 * 
+	 * ByteArrayOutputStream baos = new ByteArrayOutputStream();
+	 * 
+	 * ImageIO.write(bufferedImage, "png", baos);
+	 * 
+	 * InputStream inputStream = new ByteArrayInputStream(baos.toByteArray());
+	 * 
+	 * // Calculate new dimensions to fit within maxWidth and maxHeight while
+	 * 
+	 * // maintaining aspect ratio
+	 * 
+	 * int width = Units.pixelToEMU(bufferedImage.getWidth());
+	 * 
+	 * int height = Units.pixelToEMU(bufferedImage.getHeight());
+	 * 
+	 * if (width > maxWidth || height > maxHeight) {
+	 * 
+	 * double aspectRatio = (double) bufferedImage.getWidth() /
+	 * bufferedImage.getHeight();
+	 * 
+	 * if (aspectRatio > 1) { // Landscape image
+	 * 
+	 * width = maxWidth;
+	 * 
+	 * height = (int) (maxWidth / aspectRatio);
+	 * 
+	 * } else { // Portrait image
+	 * 
+	 * height = maxHeight;
+	 * 
+	 * width = (int) (maxHeight * aspectRatio);
+	 * 
+	 * }
+	 * 
+	 * }
+	 * 
+	 * XWPFParagraph imageParagraph = document.createParagraph();
+	 * 
+	 * XWPFRun imageRun = imageParagraph.createRun();
+	 * 
+	 * // Add the image to the document with adjusted dimensions
+	 * 
+	 * imageRun.addPicture(inputStream, XWPFDocument.PICTURE_TYPE_PNG,
+	 * file.getName(), width, height);
+	 * 
+	 * // Add a new line after each image
+	 * 
+	 * imageRun.addBreak();
+	 * 
+	 * // Create a new paragraph for the image description
+	 * 
+	 * XWPFParagraph descriptionParagraph = document.createParagraph();
+	 * 
+	 * XWPFRun descriptionRun = descriptionParagraph.createRun();
+	 * 
+	 * if (index < descriptions.size()) {
+	 * 
+	 * descriptionRun.setText(descriptions.get(index)); // Add description from
+	 * ArrayList
+	 * 
+	 * } else {
+	 * 
+	 * descriptionRun.setText(""); // Fallback description
+	 * 
+	 * }
+	 * 
+	 * descriptionRun.addBreak(); // Add a break after the description
+	 * 
+	 * index++;
+	 * 
+	 * }
+	 * 
+	 * }
+	 * 
+	 * // Write the document to a file
+	 * 
+	 * try (FileOutputStream out = new FileOutputStream("output.docx")) {
+	 * 
+	 * document.write(out);
+	 * 
+	 * }
+	 * 
+	 * System.out.
+	 * println("PNG images and descriptions inserted into Word document successfully."
+	 * );
+	 * 
+	 * } catch (Exception e) {
+	 * 
+	 * e.printStackTrace();
+	 * 
+	 * }
+	 * 
+	 * }
+	 */
 	public void copyingImagesFromScreenshotstoWordDocument(ArrayList<String> descriptions) {
 
 		try {
 
 			// Folder path containing PNG files
-
 			File folder = new File(System.getProperty("user.dir") + "\\src\\main\\resources\\Screenshots\\");
 
 			// Create a new document
-
 			XWPFDocument document = new XWPFDocument();
 
 			// Define maximum width and height for images
-
 			int maxWidth = Units.toEMU(500); // Adjust as needed
-
 			int maxHeight = Units.toEMU(700); // Adjust as needed
 
 			// Process each PNG file in the folder
-
 			int index = 0;
 
 			for (File file : folder.listFiles()) {
-
 				if (file.isFile() && file.getName().endsWith(".png")) {
 
-					// Read PNG file
-
-					BufferedImage bufferedImage = ImageIO.read(file);
-
-					ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-					ImageIO.write(bufferedImage, "png", baos);
-
-					InputStream inputStream = new ByteArrayInputStream(baos.toByteArray());
-
-					// Calculate new dimensions to fit within maxWidth and maxHeight while
-
-					// maintaining aspect ratio
-
-					int width = Units.pixelToEMU(bufferedImage.getWidth());
-
-					int height = Units.pixelToEMU(bufferedImage.getHeight());
-
-					if (width > maxWidth || height > maxHeight) {
-
-						double aspectRatio = (double) bufferedImage.getWidth() / bufferedImage.getHeight();
-
-						if (aspectRatio > 1) { // Landscape image
-
-							width = maxWidth;
-
-							height = (int) (maxWidth / aspectRatio);
-
-						} else { // Portrait image
-
-							height = maxHeight;
-
-							width = (int) (maxHeight * aspectRatio);
-
-						}
-
-					}
-
-					XWPFParagraph imageParagraph = document.createParagraph();
-
-					XWPFRun imageRun = imageParagraph.createRun();
-
-					// Add the image to the document with adjusted dimensions
-
-					imageRun.addPicture(inputStream, XWPFDocument.PICTURE_TYPE_PNG, file.getName(), width, height);
-
-					// Add a new line after each image
-
-					imageRun.addBreak();
-
 					// Create a new paragraph for the image description
-
 					XWPFParagraph descriptionParagraph = document.createParagraph();
-
 					XWPFRun descriptionRun = descriptionParagraph.createRun();
 
 					if (index < descriptions.size()) {
-
 						descriptionRun.setText(descriptions.get(index)); // Add description from ArrayList
-
 					} else {
-
 						descriptionRun.setText(""); // Fallback description
-
 					}
 
 					descriptionRun.addBreak(); // Add a break after the description
 
+					// Read PNG file
+					BufferedImage bufferedImage = ImageIO.read(file);
+
+					ByteArrayOutputStream baos = new ByteArrayOutputStream();
+					ImageIO.write(bufferedImage, "png", baos);
+					InputStream inputStream = new ByteArrayInputStream(baos.toByteArray());
+
+					// Calculate new dimensions to fit within maxWidth and maxHeight while
+					// maintaining aspect ratio
+					int width = Units.pixelToEMU(bufferedImage.getWidth());
+					int height = Units.pixelToEMU(bufferedImage.getHeight());
+
+					if (width > maxWidth || height > maxHeight) {
+						double aspectRatio = (double) bufferedImage.getWidth() / bufferedImage.getHeight();
+
+						if (aspectRatio > 1) { // Landscape image
+							width = maxWidth;
+							height = (int) (maxWidth / aspectRatio);
+						} else { // Portrait image
+							height = maxHeight;
+							width = (int) (maxHeight * aspectRatio);
+						}
+					}
+
+					// Add the image to the document with adjusted dimensions
+					XWPFParagraph imageParagraph = document.createParagraph();
+					XWPFRun imageRun = imageParagraph.createRun();
+					imageRun.addPicture(inputStream, XWPFDocument.PICTURE_TYPE_PNG, file.getName(), width, height);
+
+					// Add a new line after each image
+					imageRun.addBreak();
+
 					index++;
-
 				}
-
 			}
 
 			// Write the document to a file
-
 			try (FileOutputStream out = new FileOutputStream("output.docx")) {
-
 				document.write(out);
-
 			}
 
 			System.out.println("PNG images and descriptions inserted into Word document successfully.");
 
 		} catch (Exception e) {
-
 			e.printStackTrace();
-
 		}
-
 	}
 
 	public void deleteContentsofScreenshotsFolder() {
@@ -256,44 +345,6 @@ public class Utilities {
 	}
 
 	public void openWordDocument() {
-
-		// // Path to the specific folder
-
-		// String folderPath = System.getProperty("user.dir") + "\\output.docx";
-
-		//
-
-		// // Open the folder in the file explorer
-
-		// File folder = new File(folderPath);
-
-		//
-
-		// if (Desktop.isDesktopSupported() &&
-
-		// Desktop.getDesktop().isSupported(Desktop.Action.OPEN)) {
-
-		// try {
-
-		// Desktop.getDesktop().open(folder);
-
-		// System.out.println("Folder opened successfully.");
-
-		// } catch (IOException e) {
-
-		// e.printStackTrace();
-
-		// }
-
-		// } else {
-
-		// System.out.println("Desktop is not supported or the OPEN action is not
-
-		// supported.");
-
-		// }
-
-		// Path to the specific file
 
 		String filePath = System.getProperty("user.dir") + "\\output.docx";
 
