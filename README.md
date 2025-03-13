@@ -10,6 +10,7 @@ The tool is based on Java Swing library.
 **Release Notes:**
 
 [13-03-25] Now Supports Heading 1 and Heading 2 formats.
+
 [12-03-25] Latest release lets you add the captions of each Screenshot to your Word Document!
 No captions required? Not an issue!!! :D
 
