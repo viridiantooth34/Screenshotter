@@ -18,8 +18,8 @@ Subhayan Bakshi
 
 **🔥 Release Notes**
 - [06-03-25] ✨ New Feature: Upload documents to any JIRA issue!
-- [13-03-25] 🎨 Supports Heading 1 and Heading 2 formats in Word documents.
-- [12-03-25] 📌 Add captions for each screenshot before inserting them into your Word document—or skip them altogether! 😃
+- [03-13-25] 🎨 Supports Heading 1 and Heading 2 formats in Word documents.
+- [03-12-25] 📌 Add captions for each screenshot before inserting them into your Word document—or skip them altogether! 😃
 
 
 
