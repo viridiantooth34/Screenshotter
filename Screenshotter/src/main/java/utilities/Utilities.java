@@ -11,6 +11,8 @@ package utilities;
  *************************************************************************/
 
 import org.apache.poi.util.Units;
+import java.nio.file.*;
+
 
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
@@ -474,6 +476,19 @@ public class Utilities {
 
 			System.out.println("File not found: " + filePath);
 
+		}
+
+	}
+
+	public void copyGitKeepFile() {
+		Path source = Paths.get("src/main/resources/.gitkeep");
+		Path destination = Paths.get("src/main/resources/Screenshots/.gitkeep");
+
+		try {
+			Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
+			System.out.println(".gitkeep copied successfully!");
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 	}
