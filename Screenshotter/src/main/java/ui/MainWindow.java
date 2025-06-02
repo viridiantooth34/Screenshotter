@@ -272,6 +272,7 @@ public class MainWindow extends JFrame {
 				btnUploadToJira.setEnabled(true);
 
 				txtDocFileName.setText("");
+				utilities.copyGitKeepFile();
 
 			}
 
